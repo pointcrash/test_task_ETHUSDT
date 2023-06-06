@@ -54,8 +54,8 @@ async def fetch_ticker(conn):
         btc_new_price = float(ticker_btc['lastPrice'])
         exchange = "Binance"
 
-        print("Цена фьючерса на Ethereum (ETHUSDT):", eth_new_price)
-        print("Цена фьючерса на Bitcoin (BTCUSDT):", btc_new_price)
+        # print("Цена фьючерса на Ethereum (ETHUSDT):", eth_new_price)
+        # print("Цена фьючерса на Bitcoin (BTCUSDT):", btc_new_price)
 
         if eth_old_price is None and btc_old_price is None:
             eth_old_price = eth_new_price
@@ -77,7 +77,7 @@ async def fetch_ticker(conn):
 
         await insert_price(conn, exchange, eth_new_price, btc_new_price, eth_price_no_btc)
 
-        await asyncio.sleep(1)
+        # await asyncio.sleep(1)
 
 
 async def main():
